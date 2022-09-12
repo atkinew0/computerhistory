@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const dataDir = path.join(process.cwd(), 'db');
 
     const data = await fs.readFile(dataDir + '/db.json', "utf8");
-
-    res.status(200).json(data);
-  }
+    res.setHeader('Content-Type', 'application/json');
+    res.json(data)
+}
   

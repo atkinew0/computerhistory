@@ -1,32 +1,32 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import axios from 'axios';
 import { useEffect, useState } from 'react'
+import VideoList from '../components/list'
 
 export default function Home() {
 
-  const [data,setData] = useState();
+  const [videoData,setVideoData] = useState([]);
 
-  useEffect(()=> {
-    async function fetchData(){
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios('/api/db');
 
-      const data = await fetch('/api/db');
-      const processed = await data.json()
-    
-      setData(processed)
-
+      console.log("In effect type of axios result data is ",typeof result.data)
+    setVideoData(JSON.parse(result.data))
     }
     fetchData()
 
-  }, [])
+  }, [] );
 
 
+
+ 
 
   return (
    <div>
-    <p>
-      {data}
-    </p>
+    <VideoList videos={videoData}/>
    </div>
   )
 }
