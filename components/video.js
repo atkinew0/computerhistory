@@ -1,6 +1,8 @@
 
 import {useState} from 'react'
 import { router, useRouter } from 'next/router'
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 export default function Video(props){
 
@@ -22,7 +24,7 @@ export default function Video(props){
           <h3>ID:{props.details.id}</h3>
             <h3>{props.details.title}</h3>
             <p><span onClick={toggle}>{showDesc? props.details.description : props.details.description.substr(0,150)+"..." }</span></p>
-            <span>Score:{props.details.score}</span>
+            <span>Score:<Rater total={3} ><p>*</p></Rater> </span>
         </div>
     )
 

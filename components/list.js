@@ -12,8 +12,8 @@ export default function VideoList(props){
         if(props.videos){
             
 
-            return props.videos.map((elem,index) => <li key={index}><Video details={elem}/></li>)
-
+            return (<ul> {props.videos.map((elem,index) => <li key={index}><Video details={elem}/></li>)}
+                    </ul> )
         }else{
             return <p>Loading</p>
         }
@@ -21,7 +21,6 @@ export default function VideoList(props){
    
     return (
       <div>
-        <h1>Videolist</h1>
         {show()}
         
         

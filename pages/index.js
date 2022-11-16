@@ -11,10 +11,7 @@ import { onValue,ref, set } from 'firebase/database'
 
 
 export default function Home() {
-
-  const [videoData,setVideoData] = useState([]);
-
-
+  const [videoData, setVideoData] = useState([]);
 
   useEffect(() => {
     // const fetchData = async () => {
@@ -25,24 +22,22 @@ export default function Home() {
     // }
     // fetchData()
 
-    onValue(ref(db), snapshot => {
+    onValue(ref(db), (snapshot) => {
       const data = snapshot.val();
-      if(data !== null){
+      if (data !== null) {
         setVideoData(Object.values(data));
       }
-    })
-
-  }, [] );
-
-
-
- 
+    });
+  }, []);
 
   return (
-   <div>
-    <VideoList videos={videoData}/>
-   </div>
-  )
+    <div>
+      <center className="center">
+        <nav>Computer History Learning</nav>
+        <VideoList videos={videoData} />
+      </center>
+    </div>
+  );
 }
 
 // export async function getStaticProps(){
