@@ -1,9 +1,8 @@
 html,
 body {
   padding: 10px;
-  max-width:85%;
+  width:100%;
   margin: auto;
-  background:rgb(209, 202, 202);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
@@ -12,10 +11,19 @@ body {
 nav{
   background: darkblue;
   color:white;
+  border-top: solid black 5px;
+  padding:1rem;
+  font-weight:bold;
 }
 
 ul {
   list-style-type: none; /* Remove bullets */
+  margin:0;
+  padding:0;
+}
+
+p{
+  margin:0;
 }
 
 a {
@@ -27,28 +35,62 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
 .card {
-  border: solid black 2px;
-  border-radius: 3px;
-  padding: 20px;
-  margin: 10px;
+  border: solid rgb(209, 202, 202) 1px;
+  background:rgb(209, 202, 202);
+  padding:2rem;
+  cursor:pointer;
+}
+
+.entry{
+  border: solid rgb(209, 202, 202) 1px;
+
+  cursor:pointer;
 
 }
 
-label {
-  margin:5px;
+.entry:hover{
+  border: solid black 1px;
+  padding:0;
+  margin:0
+
 }
 
-button {
-  margin: 5px;
+.container{
+  width:90%;
+  border:solid black 1px;
+  background:rgb(209, 202, 202);
+
+  margin:0 auto;
+  
+}
+
+.title{
+  font-weight:bold;
+}
+
+.videolist {
+  margin:1rem;
+}
+
+
+
+button{
+  background-color:transparent;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  font-size:1.5rem;
+}
+
+button.off{
+  color:grey;
+}
+
+button.off:hover{
+  color:yellow;
+}
+
+button.on{
+  color:yellow;
 }

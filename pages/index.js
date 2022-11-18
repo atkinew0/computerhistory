@@ -31,11 +31,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <center className="center">
+    <div className="container">
+      <div>
         <nav>Computer History Learning</nav>
         <VideoList videos={videoData} />
-      </center>
+      </div>
     </div>
   );
 }
