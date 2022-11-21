@@ -25,7 +25,7 @@ export default function Video(props){
             <p className="title">{props.details.id} {props.details.title}</p>
             <p><span onClick={toggle}>{showDesc? props.details.description : props.details.description.substr(0,150)+"..." }</span></p>
             </div>
-            <span>Score:<StarRating rating={props.details.scores.interestingCumulative/props.details.scores.totalVotes}/></span>
+            <span>Score:<StarRating send={()=>{}} rating={props.details.scores.interestingCumulative/props.details.scores.totalVotes}/></span>
         </div>
     )
 

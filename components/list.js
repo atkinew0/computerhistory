@@ -9,10 +9,19 @@ export default function VideoList(props){
 
         
         if (props.videos) {
+          let sorted = props.videos;
+          sorted = sorted.sort((a,b) => {
+            const scoreA = a.scores.totalVotes === 0 ? 0 :a.scores.interestingCumulative/a.scores.totalVotes;
+            const scoreB = b.scores.totalVotes === 0 ? 0: b.scores.interestingCumulative/b.scores.totalVotes;
+            return scoreB - scoreA;
+          })
+
+
+
           return (
             <ul>
               {" "}
-              {props.videos.map((elem, index) => (
+              {sorted.map((elem, index) => (
                 <li key={index}>
                   <Video details={elem} />
                 </li>
